@@ -5,7 +5,7 @@ def emails(data):
     with open(data, 'r') as f:
         file = f.read()
         email_not_duplicated = []
-        rouls_email = r'^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+        rouls_email = r"[a-z0-9]+@[a-z]+.[a-z]"
         emails = re.findall(rouls_email, file)
         # we need to sorted all emailes
         emails.sort()
@@ -42,7 +42,6 @@ def phone_numbers(data):
     
     return phone_not_duplicated
 
-
 if __name__ == '__main__':
    print(emails('potential-contacts.txt'))
-   print(phone_numbers('potential-contacts.txt'))
+   print(phone_numbers('phone-numbers.txt'))
